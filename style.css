@@ -1,4 +1,4 @@
-:root { 
+:root {
   --bg-color: #f0f4f8;
   --card-bg: #ffffff;
   --text-color: #1a202c;
@@ -58,7 +58,7 @@ header {
   gap: 0.5rem;
   color: var(--primary-color);
 }
-/* Este é um comentário */
+
 nav ul {
   display: flex;
   list-style: none;
