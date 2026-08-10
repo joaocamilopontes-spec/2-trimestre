@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- Atalho de acessibilidade para leitores de tela e teclado -->
+  <!-- Atalho para navegação por teclado (WCAG 2.1) -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- Cabeçalho e Controles de Acessibilidade -->
@@ -32,19 +32,20 @@
       </nav>
 
       <div class="accessibility-toolbar" role="region" aria-label="Ferramentas de Acessibilidade">
-        <button id="toggle-contrast" aria-label="Alternar modo de alto contraste" title="Alto Contraste">
-          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Contraste
+        <button id="toggle-contrast" type="button" aria-label="Alternar modo de alto contraste" title="Alto Contraste">
+          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+          <span>Contraste</span>
         </button>
-        <button id="toggle-dark" aria-label="Alternar modo escuro" title="Modo Escuro">
+        <button id="toggle-dark" type="button" aria-label="Alternar modo escuro" title="Modo Escuro">
           <i class="fa-solid fa-moon" aria-hidden="true"></i>
         </button>
-        <button id="increase-font" aria-label="Aumentar tamanho do texto" title="Aumentar Fonte">A+</button>
-        <button id="decrease-font" aria-label="Diminuir tamanho do texto" title="Diminuir Fonte">A-</button>
+        <button id="increase-font" type="button" aria-label="Aumentar tamanho do texto" title="Aumentar Fonte">A+</button>
+        <button id="decrease-font" type="button" aria-label="Diminuir tamanho do texto" title="Diminuir Fonte">A-</button>
       </div>
     </div>
   </header>
 
-  <main id="conteudo-principal" role="main">
+  <main id="conteudo-principal" role="main" tabindex="-1">
     <!-- 1. Hero Section -->
     <section id="inicio" class="hero-section" aria-labelledby="hero-title">
       <div class="hero-card">
@@ -67,7 +68,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Grupo diversificado de estudantes sorrindo e trabalhando juntos com laptops em uma mesa redonda">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Grupo diversificado de estudantes sorrindo e trabalhando juntos com laptops em uma mesa">
         </div>
       </div>
     </section>
@@ -120,7 +121,7 @@
           </button>
         </form>
 
-        <div id="mensagem-acolhimento" class="mensagem-card hidden" role="alert">
+        <div id="mensagem-acolhimento" class="mensagem-card hidden" role="alert" aria-live="polite">
           <i class="fa-solid fa-circle-check icon-success" aria-hidden="true"></i>
           <h3>Você é importante!</h3>
           <p id="texto-resposta"></p>
@@ -158,7 +159,7 @@
         <p class="subtitle">Teste seus conhecimentos selecionando as opções abaixo.</p>
       </div>
 
-      <form id="quiz-container" onsubmit="event.preventDefault();">
+      <form id="quiz-form" onsubmit="event.preventDefault();">
         <fieldset class="quiz-card">
           <legend class="q-number">Questão 1 de 5</legend>
           <h3>Qual destas atitudes caracteriza o cyberbullying?</h3>
@@ -202,7 +203,7 @@
         <button type="button" onclick="calcularQuiz()" class="btn-primary btn-large">
           <i class="fa-solid fa-check" aria-hidden="true"></i> Finalizar Quiz
         </button>
-        <div id="quiz-resultado" class="hidden" role="status"></div>
+        <div id="quiz-resultado" class="hidden" role="status" aria-live="polite"></div>
       </form>
     </section>
 

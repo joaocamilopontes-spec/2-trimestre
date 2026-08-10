@@ -1,85 +1,106 @@
-// Frases motivacionais/acolhedoras para o Portal de Escuta
-const frasesAcolhedoras = [
-  "O que você vivencia na internet não define quem você é. Lembre-se de salvar os prints e procurar um professor ou adulto de confiança!",
-  "A culpa nunca é da vítima. Não guarde sentimentos difíceis sozinho, converse com a equipe pedagógica da sua escola.",
-  "Reconhecer que precisa de ajuda exige coragem. Bloqueie perfis agressivos e busque orientação com os seus responsáveis.",
-  "Seu bem-estar é prioridade. Existem redes gratuitas de ajuda como o CVV (188) e a SaferNet prontas para apoiar você."
-];
+// Controle de Fonte e Temas de Acessibilidade
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.documentElement;
+  const toggleContrastBtn = document.getElementById("toggle-contrast");
+  const toggleDarkBtn = document.getElementById("toggle-dark");
+  const increaseFontBtn = document.getElementById("increase-font");
+  const decreaseFontBtn = document.getElementById("decrease-font");
 
-// Função do Portal de Escuta (Simulação sem salvar dados)
+  let currentScale = 1.0;
+  const maxScale = 1.4;
+  const minScale = 0.85;
+
+  // Alternar Alto Contraste
+  toggleContrastBtn.addEventListener("click", () => {
+    if (root.getAttribute("data-theme") === "high-contrast") {
+      root.removeAttribute("data-theme");
+    } else {
+      root.setAttribute("data-theme", "high-contrast");
+    }
+  });
+
+  // Alternar Modo Escuro
+  toggleDarkBtn.addEventListener("click", () => {
+    if (root.getAttribute("data-theme") === "dark") {
+      root.removeAttribute("data-theme");
+    } else {
+      root.setAttribute("data-theme", "dark");
+    }
+  });
+
+  // Aumentar Tamanho do Texto
+  increaseFontBtn.addEventListener("click", () => {
+    if (currentScale < maxScale) {
+      currentScale += 0.1;
+      root.style.setProperty("--font-scale", `${currentScale}rem`);
+    }
+  });
+
+  // Diminuir Tamanho do Texto
+  decreaseFontBtn.addEventListener("click", () => {
+    if (currentScale > minScale) {
+      currentScale -= 0.1;
+      root.style.setProperty("--font-scale", `${currentScale}rem`);
+    }
+  });
+});
+
+// Simulação do Formulário de Escuta
 function enviarDesabafo(event) {
   event.preventDefault();
-  
-  const campoTexto = document.getElementById("desabafo");
-  const cardMensagem = document.getElementById("mensagem-acolhimento");
+  const inputDesabafo = document.getElementById("desabafo");
+  const mensagemCard = document.getElementById("mensagem-acolhimento");
   const textoResposta = document.getElementById("texto-resposta");
 
-  if (campoTexto.value.trim() === "") return;
-
-  // Seleciona uma mensagem motivacional aleatória
-  const fraseSorteada = frasesAcolhedoras[Math.floor(Math.random() * frasesAcolhedoras.length)];
-  
-  textoResposta.innerText = fraseSorteada;
-  cardMensagem.classList.remove("hidden");
-
-  // Limpa o campo sem armazenar nenhum dado
-  campoTexto.value = "";
+  if (inputDesabafo.value.trim() !== "") {
+    textoResposta.textContent = "Obrigado por compartilhar seu momento conosco. Lembre-se: você é uma pessoa valiosa e não precisa passar por desafios sozinho. Se precisar de ajuda imediata, ligue 188 (CVV).";
+    mensagemCard.classList.remove("hidden");
+    inputDesabafo.value = "";
+    mensagemCard.focus();
+  }
 }
 
-// Avaliação do Quiz (5 perguntas)
+// Cálculo e Validação do Quiz
 function calcularQuiz() {
-  const respostasCorretas = {
-    q1: "1",
-    q2: "1",
-    q3: "1",
-    q4: "1",
-    q5: "1"
-  };
+  const totalQuestoes = 5;
+  let pontos = 0;
+  let respondidas = 0;
 
-  let pontuacao = 0;
-  const totalPerguntas = 5;
-
-  for (let i = 1; i <= totalPerguntas; i++) {
-    const opcaoSelecionada = document.querySelector(`input[name="q${i}"]:checked`);
-    if (opcaoSelecionada && opcaoSelecionada.value === respostasCorretas[`q${i}`]) {
-      pontuacao++;
+  for (let i = 1; i <= totalQuestoes; i++) {
+    const radios = document.getElementsByName(`q${i}`);
+    for (const radio of radios) {
+      if (radio.checked) {
+        respondidas++;
+        pontos += parseInt(radio.value, 10);
+      }
     }
   }
 
-  const resultadoElemento = document.getElementById("quiz-resultado");
-  resultadoElemento.classList.remove("hidden");
-  resultadoElemento.innerText = `Você acertou ${pontuacao} de ${totalPerguntas} perguntas!`;
+  const resultadoDiv = document.getElementById("quiz-resultado");
+  resultadoDiv.classList.remove("hidden");
+
+  if (respondidas < totalQuestoes) {
+    resultadoDiv.style.backgroundColor = "var(--focus-ring)";
+    resultadoDiv.style.color = "#000000";
+    resultadoDiv.textContent = `Por favor, responda a todas as ${totalQuestoes} questões para ver seu resultado. (${respondidas}/${totalQuestoes} respondidas)`;
+  } else {
+    resultadoDiv.style.backgroundColor = "var(--accent-color)";
+    resultadoDiv.style.color = "#ffffff";
+    
+    if (pontos === totalQuestoes) {
+      resultadoDiv.textContent = `Parabéns! Você acertou todas as ${pontos} de ${totalQuestoes} questões. Você é um guardião da segurança digital!`;
+    } else {
+      resultadoDiv.textContent = `Você acertou ${pontos} de ${totalQuestoes} questões. Continue estudando as dicas para se proteger cada vez melhor!`;
+    }
+  }
+
+  resultadoDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// Acessibilidade: Ajuste de Tamanho de Fonte
-let fontFactor = 100;
-
-document.getElementById("increase-font").addEventListener("click", () => {
-  if (fontFactor < 130) {
-    fontFactor += 10;
-    document.body.style.fontSize = `${fontFactor}%`;
-  }
-});
-
-document.getElementById("decrease-font").addEventListener("click", () => {
-  if (fontFactor > 80) {
-    fontFactor -= 10;
-    document.body.style.fontSize = `${fontFactor}%`;
-  }
-});
-
-// Acessibilidade: Modo Escuro
-const btnDark = document.getElementById("toggle-dark");
-btnDark.addEventListener("click", () => {
-  const currentTheme = document.body.getAttribute("data-theme");
-  if (currentTheme === "dark") {
-    document.body.removeAttribute("data-theme");
-  } else {
-    document.body.setAttribute("data-theme", "dark");
-  }
-});
-
-// Botão de voltar ao topo suavemente
+// Voltar ao topo da página
 function voltarAoTopo() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
