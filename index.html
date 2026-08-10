@@ -3,186 +3,250 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Apoio - Cyberbullying e Segurança Digital</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Portal Conexão Segura — Apoio e Segurança Digital ao Estudante</title>
+  <meta name="description" content="Portal educativo e de acolhimento estudantil sobre cyberbullying, prevenção e segurança digital.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
 
-  <!-- Cabeçalho e Navegação -->
-  <header>
-    <div class="logo">
-      <i class="fa-solid fa-shield-halved"></i>
-      <span>Conexão Segura</span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#conteudo">O que é?</a></li>
-        <li><a href="#escuta">Portal de Escuta</a></li>
-        <li><a href="#quiz">Quiz Digital</a></li>
-        <li><a href="#referencias">Referências</a></li>
-      </ul>
-    </nav>
-    <div class="accessibility-controls">
-      <button id="toggle-dark" title="Alternar Modo Escuro"><i class="fa-solid fa-moon"></i></button>
-      <button id="increase-font" title="Aumentar Fonte">A+</button>
-      <button id="decrease-font" title="Diminuir Fonte">A-</button>
+  <!-- Atalho de acessibilidade para leitores de tela e teclado -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Cabeçalho e Controles de Acessibilidade -->
+  <header role="banner">
+    <div class="header-container">
+      <a href="#inicio" class="logo" aria-label="Página Inicial do Conexão Segura">
+        <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+        <span>Conexão Segura</span>
+      </a>
+      
+      <nav aria-label="Navegação Principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#dicas">Segurança</a></li>
+          <li><a href="#escuta">Escuta</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#referencias">Fontes</a></li>
+        </ul>
+      </nav>
+
+      <div class="accessibility-toolbar" role="region" aria-label="Ferramentas de Acessibilidade">
+        <button id="toggle-contrast" aria-label="Alternar modo de alto contraste" title="Alto Contraste">
+          <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i> Contraste
+        </button>
+        <button id="toggle-dark" aria-label="Alternar modo escuro" title="Modo Escuro">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="increase-font" aria-label="Aumentar tamanho do texto" title="Aumentar Fonte">A+</button>
+        <button id="decrease-font" aria-label="Diminuir tamanho do texto" title="Diminuir Fonte">A-</button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- 1. Página Inicial -->
-    <section id="inicio" class="hero-section">
-      <div class="hero-content">
-        <h1>Cyberbullying e Segurança Digital</h1>
-        <p class="welcome-message">
-          "Bem-vindo ao Portal de Apoio ao Estudante. Aqui você encontrará informações, orientações e apoio sobre situações vivenciadas no ambiente escolar e virtual."
-        </p>
-        <p>A internet deve ser um espaço de aprendizado e respeito. Lembre-se: por trás de cada tela existe uma pessoa com sentimentos.</p>
-        <a href="#escuta" class="btn-primary">Precisa desabafar? Clique aqui</a>
-      </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Estudante navegando com segurança na internet">
-      </div>
-    </section>
-
-    <!-- Conteúdo do Tema -->
-    <section id="conteudo" class="section-container">
-      <h2><i class="fa-solid fa-lock"></i> Entendendo o Cyberbullying</h2>
-      <p>O cyberbullying é a prática de violência verbal ou psicológica realizada no ambiente virtual (redes sociais, jogos online, aplicativos de mensagem). Ele se manifesta por meio de ofensas, boatos, vazamento de fotos sem consentimento ou exclusão intencional.</p>
-      
-      <div class="cards-orientacao">
-        <div class="card">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <h3>Como identificar?</h3>
-          <p>Comentários agressivos contínuos, perfis falsos criados para humilhar, exposição de conversas privadas e intimidação em mensagens diretas.</p>
+  <main id="conteudo-principal" role="main">
+    <!-- 1. Hero Section -->
+    <section id="inicio" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="badge">
+            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Espaço de Acolhimento
+          </span>
+          <h1 id="hero-title">Cyberbullying e Segurança Digital</h1>
+          <blockquote class="welcome-message">
+            "Bem-vindo ao Portal de Apoio ao Estudante. Aqui você encontrará informações, orientações e acolhimento sobre situações vivenciadas no ambiente escolar e virtual."
+          </blockquote>
+          <p>Nenhum estudante deve enfrentar o desrespeito ou o medo sozinho. A empatia e a informação tornam nossa comunidade escolar mais forte.</p>
+          <div class="hero-actions">
+            <a href="#escuta" class="btn-primary">
+              <i class="fa-solid fa-heart" aria-hidden="true"></i> Precisa conversar?
+            </a>
+            <a href="#quiz" class="btn-secondary">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i> Teste seus conhecimentos
+            </a>
+          </div>
         </div>
-        <div class="card">
-          <i class="fa-solid fa-user-shield"></i>
-          <h3>Como se proteger?</h3>
-          <p>Mantenha perfis privados, use senhas fortes com verificação em duas etapas e nunca compartilhe dados pessoais com desconhecidos.</p>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Grupo diversificado de estudantes sorrindo e trabalhando juntos com laptops em uma mesa redonda">
         </div>
       </div>
     </section>
 
-    <!-- 2. Portal de Escuta -->
-    <section id="escuta" class="section-container bg-alt">
-      <h2><i class="fa-solid fa-comments"></i> Portal de Escuta</h2>
-      <p class="subtitle">Este é um espaço seguro para desabafar. Este formulário é uma simulação e NENHUMA informação digitada será salva.</p>
-      
-      <div class="escuta-grid">
+    <!-- 2. O que é Cyberbullying & Dicas -->
+    <section id="dicas" class="section-container" aria-labelledby="dicas-title">
+      <div class="section-header">
+        <h2 id="dicas-title">
+          <i class="fa-solid fa-user-shield" aria-hidden="true"></i> Entendendo & Se Protegendo
+        </h2>
+        <p class="subtitle">Aprenda a reconhecer atitudes nocivas e a blindar sua navegação na internet.</p>
+      </div>
+
+      <div class="grid-cards">
+        <article class="info-card">
+          <div class="card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></div>
+          <h3>O que é Cyberbullying?</h3>
+          <p>É a prática de violência psicológica ou verbal repetitiva realizada através de meios digitais. Inclui ofensas, exclusão intencional, perfis falsos e vazamento de fotos ou conversas sem permissão.</p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+          <h3>Senhas & Autenticação</h3>
+          <p>Crie senhas fortes combinando letras maiúsculas, minúsculas, números e símbolos. Ative a <strong>Autenticação em Duas Etapas (2FA)</strong> em todas as suas contas sociais e e-mails.</p>
+        </article>
+
+        <article class="info-card">
+          <div class="card-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
+          <h3>Privacidade em Primeiro Lugar</h3>
+          <p>Evite divulgar sua localização em tempo real, fotos usando uniforme escolar ou dados familiares. Mantenha seus perfis configurados como privados.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Portal de Escuta -->
+    <section id="escuta" class="section-container bg-alt" aria-labelledby="escuta-title">
+      <div class="section-header">
+        <h2 id="escuta-title">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i> Portal de Escuta
+        </h2>
+        <p class="subtitle">Este é um espaço seguro para desabafar. <strong>Nota: Esta página é uma simulação demonstrativa e nenhuma informação é armazenada.</strong></p>
+      </div>
+
+      <div class="escuta-wrapper">
         <form id="escuta-form" onsubmit="enviarDesabafo(event)">
-          <label for="desabafo">Conte o que está acontecendo ou como se sente:</label>
-          <textarea id="desabafo" rows="5" placeholder="Escreva aqui seu desabafo..." required></textarea>
-          <button type="submit" class="btn-primary">Enviar Desabafo</button>
+          <label for="desabafo">Escreva o que você está sentindo ou vivenciando:</label>
+          <textarea id="desabafo" name="desabafo" rows="5" placeholder="Escreva aqui com suas palavras..." required aria-required="true"></textarea>
+          <button type="submit" class="btn-primary">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar Desabafo
+          </button>
         </form>
 
-        <div id="mensagem-acolhimento" class="mensagem-card hidden">
-          <i class="fa-solid fa-circle-check icon-success"></i>
-          <h3>Você não está sozinho!</h3>
+        <div id="mensagem-acolhimento" class="mensagem-card hidden" role="alert">
+          <i class="fa-solid fa-circle-check icon-success" aria-hidden="true"></i>
+          <h3>Você é importante!</h3>
           <p id="texto-resposta"></p>
         </div>
       </div>
 
-      <div class="cards-orientacao">
-        <div class="card">
-          <i class="fa-solid fa-school"></i>
-          <h3>Onde buscar ajuda?</h3>
-          <p>Guarde os prints das conversas como prova e procure um professor, pedagogo, direção da escola ou familiares de confiança.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-phone-volume"></i>
-          <h3>Canais Gratuitos</h3>
-          <p><strong>SaferNet Brasil:</strong> safernet.org.br</p>
-          <p><strong>CVV (Apoio Emocional):</strong> Ligue 188</p>
-          <p><strong>Disque 100:</strong> Direitos Humanos</p>
+      <div class="support-channels">
+        <h3><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Onde buscar ajuda de verdade?</h3>
+        <div class="channels-grid">
+          <div class="channel-item">
+            <i class="fa-solid fa-school-flag" aria-hidden="true"></i>
+            <h4>Na sua Escola</h4>
+            <p>Procure professores de confiança, pedagogos, a equipe de orientação educacional ou a direção.</p>
+          </div>
+          <div class="channel-item">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <h4>CVV — Apoio Emocional</h4>
+            <p>Atendimento gratuito 24h por dia pelo telefone <strong>188</strong> ou pelo site <strong>cvv.org.br</strong></p>
+          </div>
+          <div class="channel-item">
+            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+            <h4>SaferNet Brasil</h4>
+            <p>Plataforma para denúncias anônimas de crimes cibernéticos e orientação em <strong>safernet.org.br</strong></p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. Quiz Interativo -->
-    <section id="quiz" class="section-container">
-      <h2><i class="fa-solid fa-list-check"></i> Quiz: Teste seus Conhecimentos</h2>
-      <p class="subtitle">Responda às 5 perguntas abaixo sobre respeito e segurança na rede.</p>
-
-      <div id="quiz-container">
-        <!-- Pergunta 1 -->
-        <div class="quiz-item">
-          <h3>1. Qual das atitudes abaixo é considerada Cyberbullying?</h3>
-          <label><input type="radio" name="q1" value="0"> Concordar com a opinião de um colega em um post público.</label><br>
-          <label><input type="radio" name="q1" value="1"> Criar uma conta falsa para ridicularizar a foto ou atitude de um colega.</label><br>
-          <label><input type="radio" name="q1" value="0"> Tirar dúvidas sobre a matéria escolar no grupo da turma.</label>
-        </div>
-
-        <!-- Pergunta 2 -->
-        <div class="quiz-item">
-          <h3>2. O que fazer ao presenciar um colega sendo atacado na internet?</h3>
-          <label><input type="radio" name="q2" value="0"> Curtir e compartilhar a publicação para não virar o próximo alvo.</label><br>
-          <label><input type="radio" name="q2" value="1"> Apoiar a vítima, denunciar a publicação e avisar um adulto responsável.</label><br>
-          <label><input type="radio" name="q2" value="0"> Ignorar e fechar o aplicativo sem tomar nenhuma atitude.</label>
-        </div>
-
-        <!-- Pergunta 3 -->
-        <div class="quiz-item">
-          <h3>3. Qual destas opções é uma senha forte e segura?</h3>
-          <label><input type="radio" name="q3" value="0"> Sua data de nascimento ou "12345678".</label><br>
-          <label><input type="radio" name="q3" value="1"> Uma combinação de letras maiúsculas, minúsculas, números e símbolos.</label><br>
-          <label><input type="radio" name="q3" value="0"> O primeiro nome do seu melhor amigo.</label>
-        </div>
-
-        <!-- Pergunta 4 -->
-        <div class="quiz-item">
-          <h3>4. Se você receber um link suspeito prometendo prêmios ou jogos grátis por mensagem, você deve:</h3>
-          <label><input type="radio" name="q4" value="1"> Não clicar no link e apagar a mensagem imediatamente.</label><br>
-          <label><input type="radio" name="q4" value="0"> Clicar e preencher seus dados pessoais para testar.</label><br>
-          <label><input type="radio" name="q4" value="0"> Encaminhar para todos os seus contatos para que eles testem também.</label>
-        </div>
-
-        <!-- Pergunta 5 -->
-        <div class="quiz-item">
-          <h3>5. O que fazer se alguém ameaçar expor mensagens ou fotos suas na rede?</h3>
-          <label><input type="radio" name="q5" value="0"> Ceder às chantagens e fazer tudo o que a pessoa pedir.</label><br>
-          <label><input type="radio" name="q5" value="1"> Guardar os prints das provas, bloquear o perfil e buscar ajuda da escola e da família.</label><br>
-          <label><input type="radio" name="q5" value="0"> Apagar sua conta nas redes e guardar o problema sozinho.</label>
-        </div>
-
-        <button onclick="calcularQuiz()" class="btn-primary">Verificar Resultado</button>
-        <div id="quiz-resultado" class="hidden"></div>
+    <!-- 4. Quiz Interativo -->
+    <section id="quiz" class="section-container" aria-labelledby="quiz-title">
+      <div class="section-header">
+        <h2 id="quiz-title">
+          <i class="fa-solid fa-circle-question" aria-hidden="true"></i> Quiz: Respeito e Segurança Digital
+        </h2>
+        <p class="subtitle">Teste seus conhecimentos selecionando as opções abaixo.</p>
       </div>
+
+      <form id="quiz-container" onsubmit="event.preventDefault();">
+        <fieldset class="quiz-card">
+          <legend class="q-number">Questão 1 de 5</legend>
+          <h3>Qual destas atitudes caracteriza o cyberbullying?</h3>
+          <label><input type="radio" name="q1" value="0"> Tirar dúvidas sobre o dever de casa no grupo da turma.</label>
+          <label><input type="radio" name="q1" value="1"> Criar perfis falsos ou figurinhas para ridicularizar um colega.</label>
+          <label><input type="radio" name="q1" value="0"> Expressar opiniões respeitosas em uma postagem.</label>
+        </fieldset>
+
+        <fieldset class="quiz-card">
+          <legend class="q-number">Questão 2 de 5</legend>
+          <h3>Como agir ao ver um colega sofrendo ataques nas redes sociais?</h3>
+          <label><input type="radio" name="q2" value="0"> Ignorar para não virar o próximo alvo.</label>
+          <label><input type="radio" name="q2" value="1"> Guardar provas (prints), denunciar a publicação e apoiar o colega com auxílio de um adulto.</label>
+          <label><input type="radio" name="q2" value="0"> Encaminhar as ofensas para outros amigos.</label>
+        </fieldset>
+
+        <fieldset class="quiz-card">
+          <legend class="q-number">Questão 3 de 5</legend>
+          <h3>O que torna uma senha realmente segura?</h3>
+          <label><input type="radio" name="q3" value="0"> Usar sua data de nascimento ou nome do seu pet.</label>
+          <label><input type="radio" name="q3" value="1"> Combinar letras maiúsculas, minúsculas, números e símbolos especiais.</label>
+          <label><input type="radio" name="q3" value="0"> Repetir a mesma senha simples em todos os sites.</label>
+        </fieldset>
+
+        <fieldset class="quiz-card">
+          <legend class="q-number">Questão 4 de 5</legend>
+          <h3>Recebeu um link suspeito oferecendo vantagens em um jogo. O que fazer?</h3>
+          <label><input type="radio" name="q4" value="1"> Não clicar e apagar/denunciar a mensagem imediatamente.</label>
+          <label><input type="radio" name="q4" value="0"> Clicar e digitar seus dados pessoais.</label>
+          <label><input type="radio" name="q4" value="0"> Mandar o link para amigos testarem primeiro.</label>
+        </fieldset>
+
+        <fieldset class="quiz-card">
+          <legend class="q-number">Questão 5 de 5</legend>
+          <h3>Se alguém chantagear você com mensagens ou fotos privadas:</h3>
+          <label><input type="radio" name="q5" value="0"> Ceder à chantagem e fazer o que a pessoa pedir.</label>
+          <label><input type="radio" name="q5" value="1"> Não ceder, tirar evidências (prints), bloquear o autor e comunicar a família ou escola.</label>
+          <label><input type="radio" name="q5" value="0"> Deletar suas redes e guardar segredo absoluto.</label>
+        </fieldset>
+
+        <button type="button" onclick="calcularQuiz()" class="btn-primary btn-large">
+          <i class="fa-solid fa-check" aria-hidden="true"></i> Finalizar Quiz
+        </button>
+        <div id="quiz-resultado" class="hidden" role="status"></div>
+      </form>
     </section>
 
-    <!-- 4. Página de Referências -->
-    <section id="referencias" class="section-container bg-alt">
-      <h2><i class="fa-solid fa-bookmark"></i> Referências e Fontes Confiáveis</h2>
+    <!-- 5. Referências -->
+    <section id="referencias" class="section-container bg-alt" aria-labelledby="referencias-title">
+      <div class="section-header">
+        <h2 id="referencias-title">
+          <i class="fa-solid fa-book-bookmark" aria-hidden="true"></i> Referências Confiáveis
+        </h2>
+        <p class="subtitle">Todo o conteúdo deste portal é baseado em diretrizes oficiais de educação e proteção digital.</p>
+      </div>
       <ul class="references-list">
         <li>
           <a href="https://safernet.org.br/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> SaferNet Brasil — Prevenção e Segurança na Internet
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> SaferNet Brasil — Prevenção e Direitos Humanos na Internet
           </a>
         </li>
         <li>
           <a href="https://www.unicef.org/brazil/cyberbullying-o-que-e-e-como-para-lo" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> UNICEF Brasil — Cyberbullying: O que é e como pará-lo
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> UNICEF Brasil — Cyberbullying: O que é e como pará-lo
           </a>
         </li>
         <li>
           <a href="https://www.gov.br/mec/pt-br" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ministério da Educação (MEC) — Guia de Convivência Escolar
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ministério da Educação (MEC) — Convivência Escolar
           </a>
         </li>
         <li>
           <a href="https://www.cvv.org.br/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Centro de Valorização da Vida (CVV) — Apoio Emocional
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Centro de Valorização da Vida (CVV)
           </a>
         </li>
       </ul>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Portal de Apoio ao Estudante | Projeto Educação e Segurança Digital</p>
-    <button id="btn-top" onclick="voltarAoTopo()" title="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; 2026 Portal Conexão Segura | Projeto de Apoio e Proteção ao Estudante</p>
+      <small>Construído com acessibilidade, foco na segurança e acolhimento.</small>
+    </div>
+    <button id="btn-top" onclick="voltarAoTopo()" title="Voltar ao topo da página" aria-label="Voltar ao topo da página">
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
   </footer>
 
   <script src="script.js"></script>
