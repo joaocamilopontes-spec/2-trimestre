@@ -1,12 +1,12 @@
-// Frases acolhedoras específicas sobre cyberbullying e apoio
+// Frases motivacionais/acolhedoras para o Portal de Escuta
 const frasesAcolhedoras = [
-  "O que você passa online não define quem você é. Lembre-se de fazer prints das conversas e contar para um adulto de confiança na escola!",
-  "A culpa nunca é da vítima. Não guarde esse peso sozinho, converse com um professor, pedagogo ou seus pais.",
-  "Você é corajoso(a) por desabafar. Bloqueie os agressores e procure a orientação da equipe escolar para resolver a situação.",
-  "Sua segurança e bem-estar vêm em primeiro lugar. Existem canais gratuitos como o CVV (188) e a SaferNet prontos para apoiar você."
+  "O que você vivencia na internet não define quem você é. Lembre-se de salvar os prints e procurar um professor ou adulto de confiança!",
+  "A culpa nunca é da vítima. Não guarde sentimentos difíceis sozinho, converse com a equipe pedagógica da sua escola.",
+  "Reconhecer que precisa de ajuda exige coragem. Bloqueie perfis agressivos e busque orientação com os seus responsáveis.",
+  "Seu bem-estar é prioridade. Existem redes gratuitas de ajuda como o CVV (188) e a SaferNet prontas para apoiar você."
 ];
 
-// Função do Portal de Escuta (Simulado)
+// Função do Portal de Escuta (Simulação sem salvar dados)
 function enviarDesabafo(event) {
   event.preventDefault();
   
@@ -26,7 +26,7 @@ function enviarDesabafo(event) {
   campoTexto.value = "";
 }
 
-// Avaliação das 5 Perguntas do Quiz
+// Avaliação do Quiz (5 perguntas)
 function calcularQuiz() {
   const respostasCorretas = {
     q1: "1",
